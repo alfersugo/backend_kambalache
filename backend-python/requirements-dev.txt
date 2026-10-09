@@ -1,4 +1,0 @@
-# TAREA TESTING: dependencias de desarrollo para suite automatizada.
-pytest>=8.0
-pytest-timeout>=2.0
-httpx>=0.27  # requerido por FastAPI TestClient (starlette)

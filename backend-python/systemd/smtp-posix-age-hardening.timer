@@ -1,0 +1,14 @@
+[Unit]
+Description=Run SMTP POSIX AGE structural hardening validation daily and after boot
+
+[Timer]
+# First run: 8 minutes after boot (after postgresql is ready)
+OnBootSec=8min
+# Repeat: every 24 hours (daily maintenance window at ~03:30)
+OnCalendar=*-*-* 03:30:00
+# If a scheduled run was missed (e.g. server was off), run it on next boot
+Persistent=true
+Unit=smtp-posix-age-hardening.service
+
+[Install]
+WantedBy=timers.target

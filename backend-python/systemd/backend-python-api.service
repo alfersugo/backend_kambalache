@@ -1,0 +1,22 @@
+[Unit]
+Description=SMTP POSIX Python FastAPI Backend
+After=network-online.target postgresql.service postgrest.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+EnvironmentFile=-/etc/sysconfig/smtp-posix
+Environment=SMTP_POSIX_ROOT=/home/zomitech/smtp-posix
+Environment=PYTHONPATH=/home/zomitech/smtp-posix/backend/src
+Environment=PYTHON_BACKEND_PORT=3050
+WorkingDirectory=/home/zomitech/smtp-posix/backend/src
+ExecStart=/usr/bin/python3 -m uvicorn presentation.main:app --host 0.0.0.0 --port 3050 --workers 2
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

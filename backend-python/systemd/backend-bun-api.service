@@ -1,0 +1,20 @@
+[Unit]
+Description=SMTP POSIX Bun Backend API
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/sysconfig/smtp-posix
+Environment=BUN_PORT=4050
+Environment=POSTGREST_URL=http://localhost:3000
+# JWT_SECRET se carga desde /etc/sysconfig/smtp-posix (no hardcodear aquí — OWASP A07)
+WorkingDirectory=/home/zomitech/smtp-posix/backend_bun
+ExecStart=/home/zomitech/.bun/bin/bun run src/main.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

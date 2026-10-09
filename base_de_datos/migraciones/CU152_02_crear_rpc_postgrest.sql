@@ -1,0 +1,11 @@
+-- =============================================================
+-- Caso de Uso: CU152 - Detección de comunidades
+-- Archivo: CU152_02_crear_rpc_postgrest.sql
+-- Fecha: 2026-04-19
+-- Autor: GitHub Copilot (GPT-4.1)
+-- Descripción: Expone la función detectar_comunidades como RPC en PostgREST
+-- =============================================================
+
+-- Ya expuesta por convención en PostgREST si está en esquema auth y grants correctos
+-- No requiere trigger ni tabla adicional
+-- Documentar en api.md y validar con curl/postman

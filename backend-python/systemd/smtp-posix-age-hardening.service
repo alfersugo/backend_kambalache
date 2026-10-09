@@ -1,0 +1,23 @@
+[Unit]
+Description=SMTP POSIX AGE Hardening Validation (validate_phase8_age.sh)
+Documentation=file:///home/zomitech/smtp-posix/docs/features/age_technical_reference.md
+After=postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+EnvironmentFile=-/etc/sysconfig/smtp-posix
+Environment=SMTP_POSIX_ROOT=/home/zomitech/smtp-posix
+# TCP auth — credentials come from sysconfig; no peer-auth dependency
+ExecStart=/usr/bin/bash -lc '"${SMTP_POSIX_ROOT}/backend/scripts/validate_phase8_age.sh"'
+# Capture output in the journal
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=smtp-posix-age-hardening
+# Allow up to 5 minutes for backfill (fase-3b can take ~20s on large datasets)
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target

@@ -7,6 +7,7 @@ Requisito previo: `../` R01 y R02 (rama `traza/remediacion-bd`) ya aplicados.
 
 | Orden | Archivo | Qué hace |
 |---|---|---|
+| 05 | `05_evidencia_inicio_ventana.sql` | **D-10, ejecutar primero y cuanto antes.** `track_functions='pl'` (ALTER SYSTEM + recarga), `pg_stat_reset()` como inicio de la ventana y `ANALYZE`. Fuera de transacción, como superusuario, con `-v bd_esperada=<bd>`. Verificar con `05_evidencia_verificar.sql` |
 | 10 | `10_iter1_R02_columnas.sql` | Columnas/funciones mal nombradas (reglas deducidas) |
 | 20 | `20_iter1_S08_parches_hermes.sql` | Parches de función escritos por Hermes y validados |
 | 30 | `30_iter1_S01_search_path_extensiones.sql` | `search_path` con el esquema de la extensión |

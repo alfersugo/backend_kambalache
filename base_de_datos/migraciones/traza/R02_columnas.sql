@@ -1,4 +1,4 @@
--- Generado por scripts/traza/traza_remediar.py 0.1.0+d3e6ebea3239 — NO editar a mano; regenerar.
+-- Generado por scripts/traza/traza_remediar.py 0.1.0+06a5b389825a — NO editar a mano; regenerar.
 -- Paquete R02: Columnas renombradas, faltantes y funciones de extensión (H19/H08)
 -- Huella de la traza de origen: fc9eb5b5b62cb70d7e8bb240e3e9f4664e6a78d8a179c761f5c131f3498d23c3
 -- Validado en copia: cada cambio con BEGIN/ROLLBACK + plpgsql_check (ver REMEDIACION.md).
@@ -59,9 +59,6 @@ COMMENT ON COLUMN auth.perfiles_publicos_vendedor.aprobado_por IS 'Agregada por 
 
 ALTER TABLE auth.perfiles_publicos_vendedor ADD COLUMN IF NOT EXISTS motivo_rechazo text;
 COMMENT ON COLUMN auth.perfiles_publicos_vendedor.motivo_rechazo IS 'Agregada por remediación de traza (R02). flujo de aprobación de vendedor';
-
-ALTER TABLE auth.perfiles_publicos_vendedor ADD COLUMN IF NOT EXISTS badge_confiable boolean;
-COMMENT ON COLUMN auth.perfiles_publicos_vendedor.badge_confiable IS 'Agregada por remediación de traza (R02). insignia por reputación';
 
 ALTER TABLE auth.productos ADD COLUMN IF NOT EXISTS motivo_rechazo text;
 COMMENT ON COLUMN auth.productos.motivo_rechazo IS 'Agregada por remediación de traza (R02). flujo de moderación de producto';

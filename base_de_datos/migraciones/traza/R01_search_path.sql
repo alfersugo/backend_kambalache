@@ -1,4 +1,4 @@
--- Generado por scripts/traza/traza_remediar.py 0.1.0+d3e6ebea3239 — NO editar a mano; regenerar.
+-- Generado por scripts/traza/traza_remediar.py 0.1.0+06a5b389825a — NO editar a mano; regenerar.
 -- Paquete R01: SECURITY DEFINER con search_path fijo (H10)
 -- Huella de la traza de origen: fc9eb5b5b62cb70d7e8bb240e3e9f4664e6a78d8a179c761f5c131f3498d23c3
 -- Validado en copia: cada cambio con BEGIN/ROLLBACK + plpgsql_check (ver REMEDIACION.md).

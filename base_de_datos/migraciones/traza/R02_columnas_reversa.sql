@@ -1,4 +1,4 @@
--- Generado por scripts/traza/traza_remediar.py 0.1.0+d3e6ebea3239 — NO editar a mano; regenerar.
+-- Generado por scripts/traza/traza_remediar.py 0.1.0+06a5b389825a — NO editar a mano; regenerar.
 -- Paquete R02 (reversa): Columnas renombradas, faltantes y funciones de extensión (H19/H08)
 -- Huella de la traza de origen: fc9eb5b5b62cb70d7e8bb240e3e9f4664e6a78d8a179c761f5c131f3498d23c3
 -- Validado en copia: cada cambio con BEGIN/ROLLBACK + plpgsql_check (ver REMEDIACION.md).
@@ -1618,9 +1618,6 @@ ALTER TABLE auth.perfiles_publicos_vendedor DROP COLUMN IF EXISTS aprobado_por;
 
 DO $rev$ BEGIN IF EXISTS (SELECT 1 FROM auth.perfiles_publicos_vendedor WHERE motivo_rechazo IS NOT NULL) THEN RAISE EXCEPTION 'traza: auth.perfiles_publicos_vendedor.motivo_rechazo ya tiene datos; reversa manual'; END IF; END $rev$;
 ALTER TABLE auth.perfiles_publicos_vendedor DROP COLUMN IF EXISTS motivo_rechazo;
-
-DO $rev$ BEGIN IF EXISTS (SELECT 1 FROM auth.perfiles_publicos_vendedor WHERE badge_confiable IS NOT NULL) THEN RAISE EXCEPTION 'traza: auth.perfiles_publicos_vendedor.badge_confiable ya tiene datos; reversa manual'; END IF; END $rev$;
-ALTER TABLE auth.perfiles_publicos_vendedor DROP COLUMN IF EXISTS badge_confiable;
 
 DO $rev$ BEGIN IF EXISTS (SELECT 1 FROM auth.productos WHERE motivo_rechazo IS NOT NULL) THEN RAISE EXCEPTION 'traza: auth.productos.motivo_rechazo ya tiene datos; reversa manual'; END IF; END $rev$;
 ALTER TABLE auth.productos DROP COLUMN IF EXISTS motivo_rechazo;

@@ -1,4 +1,4 @@
--- Reversa 90: perfil fiscal, retenciones y reporte SAT.
+-- Reversa 96: perfil fiscal, retenciones y reporte SAT.
 -- ISO 27001 A.5.33: si ya hubo operaciones reales NO se borran retenciones (evidencia fiscal, 5 años).
 \set ON_ERROR_STOP on
 BEGIN;

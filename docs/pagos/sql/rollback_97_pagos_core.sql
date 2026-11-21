@@ -1,4 +1,4 @@
--- Reversa 91: cotizaciones, evaluaciones, pago directo, avisos y columnas agregadas a auth.ordenes.
+-- Reversa 97: cotizaciones, evaluaciones, pago directo, avisos y columnas agregadas a auth.ordenes.
 \set ON_ERROR_STOP on
 BEGIN;
 UPDATE app.configuracion_sistema SET config_value = '{"enabled":false}'::jsonb, fecha_actualizacion = now()

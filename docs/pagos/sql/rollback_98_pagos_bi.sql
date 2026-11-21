@@ -1,4 +1,4 @@
--- Reversa 92: eventos de pagos hacia kambalache_marketplace_graph.
+-- Reversa 98: eventos de pagos hacia kambalache_marketplace_graph.
 \set ON_ERROR_STOP on
 BEGIN;
 UPDATE app.configuracion_sistema SET config_value = '{"enabled":false}'::jsonb, fecha_actualizacion = now()

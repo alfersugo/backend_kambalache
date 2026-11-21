@@ -10,6 +10,6 @@ Tablero: https://github.com/users/alfersugo/projects/2
 - FKs reales: `auth.users(id)`, `auth.productos(id)`, `auth.ordenes(id)`. `app.vendedores.id` es integer.
 - Identidad: `auth.fn_current_user_id()`, `auth.current_jwt_role()`, `auth.resolve_effective_tier()`.
 - No hay pg_cron ni btree_gist: temporizadores systemd y validación de traslapes por trigger.
-- Migraciones 89–92 con reversa (`sql/rollback_89..92`); el repo no tenía reversas.
+- Migraciones 95–98 con reversa (`sql/rollback_95..98`); el repo no tenía reversas.
 - `pagos_gateway` (webhooks Stripe/STP/PAC) solo en la fase 4, secretos en 1Password (vault `kambalache`).
 - El monedero no custodia fondos (sin IFPE de la CNBV).

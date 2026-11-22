@@ -6,3 +6,7 @@ __pycache__/
 node_modules/
 graphify-out/
 *.sql.bak
+
+# fixtures de seguridad (t_93bc04b0/t_e50a8215): nunca versionar binarios EICAR
+*eicar*.png
+base_de_datos/tests/fixtures/*.png
